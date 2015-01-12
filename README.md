@@ -1,6 +1,6 @@
 # Cinematrope
 
-<img src="" alt="Cinematrope logo" title="Cinematrope" align="right" />
+<img src="https://raw.githubusercontent.com/Xaviju/cinematrope/master/design/cinematrope-logo.png" alt="Cinematrope logo" title="Cinematrope" align="right" />
 
 Cinematrope is a side project for learning pruposes (angular) and helps you discover the movie that you need to watch.
 
@@ -22,12 +22,12 @@ Cinematrope requires *Jade*, *Sass*, *Bourbon*, *angularjs* and *jQuery*.
 Assuming git, ruby, sass, bower and gulp installed:
 
 ```bash
- host$ cd cinematrope
- host$ npm install
-guest$ bower install
-guest$ gulp
+$ cd cinematrope
+$ npm install
+$ bower install
+$ gulp
 ```
 
 ## Questions or need help?
 
-Please fill out an issue on github or send me a message.
+Please fill out an [issue on github](https://github.com/Xaviju/cinematrope/issues) or send me a message.
