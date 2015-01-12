@@ -2,7 +2,7 @@
 
 <img src="https://raw.githubusercontent.com/Xaviju/cinematrope/master/design/cinematrope-logo.png" alt="Cinematrope logo" title="Cinematrope" align="right" />
 
-Cinematrope is a side project for learning pruposes (angular) and helps you discover the movie that you need to watch.
+Cinematrope is a side project for learning purposes that helps you discover the movie that you REALLY need to watch.
 
 Current features and roadmap are:
 
