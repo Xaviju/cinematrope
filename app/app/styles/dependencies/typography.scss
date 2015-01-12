@@ -1,0 +1,105 @@
+//Uncomment to use fonts
+//@each $font-face in DroidSans, DroidSans-Bold {
+//    @font-face {
+//        font-family: '#{$font-face}';
+//        src: url('../fonts/#{$font-face}.eot?#iefix') format('embedded-opentype'),
+//        url('../fonts/#{$font-face}.woff') format('woff'),
+//        url('../fonts/#{$font-face}.ttf')  format('truetype'),
+//        url('../fonts/#{$font-face}.svg#{$font-face}') format('svg');
+//    }
+//}
+
+//font-family: 'Comfortaa', cursive;
+//font-family: 'Open Sans', sans-serif;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: $whitish;
+    font-weight: normal;
+
+    a {
+        font-weight: inherit;
+    }
+}
+
+// __Font Sizes__ //
+%xsmall {font-size: .5rem;}
+%small {font-size: .9rem;}
+%medium {font-size: 1rem;}
+%large {font-size: 1.2rem;}
+%larger {font-size: 1.6rem;}
+%xlarge {font-size: 2rem;}
+%xxlarge {font-size: 2.4rem;}
+%xxxlarge {font-size: 3.2rem;}
+
+// __Font Types__ //
+
+%title {
+    color: $strong-yellow;
+    font-family: 'Comfortaa', cursive;
+    font-weight: 400;
+}
+
+%text {
+    color: $whitish;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+}
+
+%bold {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+}
+
+// Font styles
+
+h1 {
+    @extend %title;
+    @extend %xxlarge;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    @extend %xlarge;
+}
+
+h3 {
+    @extend %larger;
+}
+
+p {
+    margin: 0 0 $margin;
+
+    img {
+        margin: 0;
+    }
+}
+
+em {
+    font-style: italic;
+}
+
+strong {
+    font-weight: bold;
+}
+
+hr {
+    border: solid $gray;
+    border-width: 1px 0 0;
+    clear: both;
+    height: 0;
+    margin: $margin 0;
+}
+
+// __Links__
+
+a,
+a:visited {
+    color: $gray-light;
+    text-decoration: none;
+}

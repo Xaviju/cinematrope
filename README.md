@@ -1,0 +1,33 @@
+# Cinematrope
+
+<img src="" alt="Cinematrope logo" title="Cinematrope" align="right" />
+
+Cinematrope is a side project for learning pruposes (angular) and helps you discover the movie that you need to watch.
+
+Current features and roadmap are:
+
+1. Find a movie by genre, decade and/or vote average.
+2. Read more information about the movie (sinopsis, director, year) **in progress**
+3. Share and save your favorites **in progress**
+
+## Cinematrope technology
+
+Cinematrope is a side project mainly for learning purposes, intended to learn basics about angularjs architecture.
+Cinematrope is all client side project, depending upon the API of [themoviedb.org](https://www.themoviedb.org)
+
+Cinematrope requires *Jade*, *Sass*, *Bourbon*, *angularjs* and *jQuery*.
+
+## How to install it on your local
+
+Assuming git, ruby, sass, bower and gulp installed:
+
+```bash
+ host$ cd cinematrope
+ host$ npm install
+guest$ bower install
+guest$ gulp
+```
+
+## Questions or need help?
+
+Please fill out an issue on github or send me a message.

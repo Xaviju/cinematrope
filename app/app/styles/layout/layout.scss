@@ -1,0 +1,20 @@
+body,
+html {
+    @extend %text;
+    background: $gray;
+    margin: 0;
+    padding: 0;
+}
+
+.warning {
+    color: $strong-yellow;
+    text-align: center;
+
+    span {
+
+        &:first-child {
+            @extend %bold;
+            margin-right: .3rem;
+        }
+    }
+}

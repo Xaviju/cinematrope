@@ -1,0 +1,17 @@
+.movie-shot {
+
+    img {
+        height: 215px;
+        max-width: 100%;
+    }
+
+    .movie-title {
+        @extend %medium;
+        @extend %bold;
+        margin: 0;
+    }
+
+    .vote-avg {
+        color: $strong-yellow;
+    }
+}

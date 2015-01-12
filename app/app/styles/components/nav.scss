@@ -1,0 +1,38 @@
+.nav {
+
+    background: $grayer;
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 100%;
+
+    form {
+        @include align-items(center);
+        @include display(flex);
+        @include flex-direction(row);
+        @include justify-content(center);
+    }
+
+    select,
+    input {
+        @include flex(1);
+        margin: .5rem;
+    }
+
+    .genres {
+        @include flex(2);
+    }
+
+    input {
+        background: $black;
+        border: 0;
+        color: $strong-yellow;
+        cursor: pointer;
+        padding: .7rem 0;
+
+        &:hover {
+            @include transition(all .3s linear);
+            background: $strong-yellow;
+            color: $white;
+        }
+    }
+}

@@ -1,0 +1,47 @@
+// THIS IS THE MAIN INCLUDES SASS FILE and We Love IT
+
+//********************************************
+// VENDOR
+//********************************************
+@import '../../bower_components/normalize.css/normalize.css';
+//Bourbon
+$prefix-for-webkit:    true;
+$prefix-for-mozilla:   true;
+$prefix-for-microsoft: true;
+$prefix-for-opera:     true;
+$prefix-for-spec:      true;
+@import '../../bower_components/bourbon/dist/bourbon';
+
+//********************************************
+// DEPENDENCIES
+//********************************************
+@import 'dependencies/helpers';
+@import 'dependencies/colors';
+@import 'dependencies/typography';
+@import 'dependencies/mixins';
+@import 'dependencies/forms';
+@import 'dependencies/responsive';
+
+//********************************************
+// LAYOUT - Common layout block
+//********************************************
+@import 'layout/layout';
+
+//********************************************
+// COMPONENTS - Reusable pieces of code
+//********************************************
+@import 'components/logo';
+@import 'components/nav';
+@import 'components/movie';
+//********************************************
+// MODULES - Single pieces of code
+//********************************************
+@import 'modules/movie-list';
+//********************************************
+// SHAME
+//********************************************
+@import 'shame/shame';
+
+//********************************************
+// MEDIA QUERIES
+//********************************************

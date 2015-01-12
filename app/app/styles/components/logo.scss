@@ -1,0 +1,37 @@
+.logo {
+    padding: 2rem 0 1rem;
+
+    .title,
+    .subtitle {
+        text-align: center;
+    }
+
+    img {
+        display: none;
+        margin: 0 auto;
+        margin-bottom: .5rem;
+    }
+
+    .title {
+        @extend %xxlarge;
+        font-weight: bold;
+        line-height: .8;
+    }
+
+    .subtitle {
+        @extend %medium;
+        color: $whitish;
+        line-height: 1;
+    }
+}
+
+@media (min-width: $small) {
+
+    .logo {
+        img {
+            display: block;
+            width: 70px;
+        }
+    }
+
+}

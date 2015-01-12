@@ -1,0 +1,3 @@
+section.movie-list(ng-controller="MovieController as movie")
+    div.movie-shot(ng-repeat="movie in movie.movies.results")
+        include ../components/movie
