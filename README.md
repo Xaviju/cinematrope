@@ -22,6 +22,7 @@ Cinematrope requires *Jade*, *Sass*, *Bourbon*, *angularjs* and *jQuery*.
 Assuming git, ruby, sass, bower and gulp installed:
 
 ```bash
+$ git clone https://github.com/Xaviju/cinematrope.git
 $ cd cinematrope
 $ npm install
 $ bower install
