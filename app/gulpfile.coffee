@@ -6,6 +6,7 @@ size = require("gulp-filesize")
 watch = require("gulp-watch")
 cache = require("gulp-cached")
 concat = require("gulp-concat")
+autoprefixer = require('gulp-autoprefixer')
 
 # HTML
 jade = require("gulp-jade")
@@ -87,6 +88,14 @@ gulp.task "sass", ->
         .pipe(size())
         .pipe(gulp.dest(paths.cssDistFold))
 
+gulp.task 'autoprefixer', ->
+    gulp.src(paths.cssMainDist)
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        }))
+        .pipe(gulp.dest(paths.cssDistFold))
+
 gulp.task "csslint", ->
     gulp.src(paths.cssMainDist)
         .pipe(plumber())
@@ -156,6 +165,7 @@ gulp.task "default", [
     "htmlhint"
     "scsslint",
     "sass",
+    "autoprefixer",
     "csslint",
     "scripts",
     "imagemin",

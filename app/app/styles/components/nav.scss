@@ -6,20 +6,20 @@
     width: 100%;
 
     form {
-        @include align-items(center);
-        @include display(flex);
-        @include flex-direction(row);
-        @include justify-content(center);
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
     }
 
     select,
     input {
-        @include flex(1);
+        flex-flow: 1;
         margin: .5rem;
     }
 
     .genres {
-        @include flex(2);
+        flex-grow: 2;
     }
 
     input {
@@ -30,9 +30,9 @@
         padding: .7rem 0;
 
         &:hover {
-            @include transition(all .3s linear);
             background: $strong-yellow;
             color: $white;
+            transition: all .3s linear;
         }
     }
 }

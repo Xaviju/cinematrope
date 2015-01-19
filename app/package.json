@@ -1,7 +1,7 @@
 {
-  "name": "Mangosta",
-  "version": "0.0.0",
-  "description": "Bullet-proof front-end architecture for fast development",
+  "name": "Cinematrope",
+  "version": "0.0.1",
+  "description": "Discover the movie that you REALLY need to watch",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "coffee-script": "^1.7.1",
+    "gulp-autoprefixer": "^2.1.0",
     "gulp-csslint": "^0.1.4",
     "gulp-filesize": "0.0.6",
     "gulp-jade": "^0.6.1",
