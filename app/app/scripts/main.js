@@ -1,6 +1,44 @@
 (function(){
     var app = angular.module('cinephaghia', []);
 
+    app.service('movieApi', ['$http', function($http) {
+
+        // Get Default reference movies
+        var getMovies = function() {
+            return $http({
+                method: "GET",
+                url: "https://api.themoviedb.org/3/discover/movie",
+                params: {
+                    api_key: '247e0e9d8f8cadd19b1cc9b925a68270',
+                    'vote_average.gte': 8,
+                    'vote_count.gte': 500,
+                    sort_by: 'vote_average.desc'
+                }
+            }).then(function(result){
+                return result.data;
+            });
+        };
+
+        // Get Genres
+        var getGenres = function() {
+            return $http({
+                url: 'http://api.themoviedb.org/3/genre/movie/list',
+                method: "GET",
+                params: {
+                    api_key: '247e0e9d8f8cadd19b1cc9b925a68270'
+                }
+            }).then(function(result){
+                return result.data;
+            });
+        };
+        // Returned accesible functions
+        return {
+            getMovies: getMovies,
+            getGenres: getGenres
+        };
+
+    }]);
+
     // Convert Movie Form into objet to be passed to MovieController
     app.service('movieSelectedService', function() {
         var movieSelected = {};
@@ -56,7 +94,7 @@
     }]);
 
     // Show movies
-    app.controller('MovieController', ['$scope', '$http', 'movieSelectedService', function($scope, $http, movieSelectedService) {
+    app.controller('MovieController', ['$scope', '$http', 'movieSelectedService', 'movieApi', function($scope, $http, movieSelectedService, movieApi) {
         var list = this;
         list.movies = [];
 
@@ -81,33 +119,27 @@
         });
 
         // Default Init movie search
-        $http({
-            url: 'https://api.themoviedb.org/3/discover/movie',
-            method: "GET",
-            params: {
-                api_key: '247e0e9d8f8cadd19b1cc9b925a68270',
-                'vote_average.gte': 8,
-                'vote_count.gte': 500,
-                sort_by: 'vote_average.desc'
-            }
-        }).success(function(data){
-            list.movies = data;
+        var GetMovies = movieApi.getMovies();
+        $('.movie-list .spinner').show();
+        GetMovies.then(function(result) {
+            $('.movie-list .spinner').hide();
+            list.movies = result;
+            setTimeout(function(){
+                $('.movie-list .movie-shot').fadeIn();
+            }, 100);
+
         });
 
     }]);
 
     // Get genres from API
-    app.controller('GenreController', ['$http', function($http) {
+    app.controller('GenreController', ['$http', 'movieApi', function($http, movieApi) {
         var list = this;
         list.genres = [];
-        $http({
-            url: 'http://api.themoviedb.org/3/genre/movie/list',
-            method: "GET",
-            params: {
-                api_key: '247e0e9d8f8cadd19b1cc9b925a68270'
-            }
-        }).success(function(data){
-            list.genres = data;
+
+        var GetGenres = movieApi.getGenres();
+        GetGenres.then(function(result) {
+            list.genres = result;
         });
     }]);
 
