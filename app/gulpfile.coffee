@@ -29,30 +29,31 @@ webserver = require('gulp-webserver')
 ##############################################################################
 # Ordered list of paths
 ##############################################################################
-paths = {
-    app: "app",
-    dist: "dist",
-    #################
-    jade: "app/**/*.jade",
-    html: "dist/views/**/*.html",
-    #################
-    scss: "app/**/*.scss",
-    scssMain: "app/styles/main.scss",
-    vendor: "bower_components/**/*.scss",
-    cssDistFold: "dist/styles/",
-    cssMainDist: "dist/styles/main.css",
-    #################
-    scripts: "app/scripts/**/*.js",
-    #################
-    imageMain: "app/images/*",
-    imageDist: "dist/images/",
-    ##################
-    svgMain: "app/svg/*",
-    svgDist: "dist/svg/",
-    ##################
-    fontsMain: "app/fonts/*",
-    fontsDist: "dist/fonts/"
-}
+paths = {}
+paths.app = "app"
+paths.dist = "dist"
+#################
+paths.jade = "app/**/*.jade"
+paths.html = "dist/views/**/*.html"
+#################
+paths.scss = "app/**/*.scss"
+paths.scssMain = "app/styles/main.scss"
+paths.vendor = "bower_components/**/*.scss"
+paths.cssDistFold = "dist/styles/"
+paths.cssMainDist = "dist/styles/main.css"
+#################
+paths.scripts = [
+    "app/scripts/main.js"
+]
+#################
+paths.imageMain = "app/images/*"
+paths.imageDist = "dist/images/"
+##################
+paths.svgMain = "app/svg/*"
+paths.svgDist = "dist/svg/"
+##################
+paths.fontsMain = "app/fonts/*"
+paths.fontsDist = "dist/fonts/"
 
 ##############################################################################
 # HTML Related tasks
@@ -61,7 +62,6 @@ paths = {
 gulp.task "jade", ->
     gulp.src(paths.jade)
         .pipe(plumber())
-        .pipe(cache("jade"))
         .pipe(jade({pretty: true}))
         .pipe(size())
         .pipe(gulp.dest(paths.dist))
@@ -85,21 +85,16 @@ gulp.task "sass", ->
     gulp.src([paths.scssMain])
         .pipe(plumber())
         .pipe(sass())
-        .pipe(size())
-        .pipe(gulp.dest(paths.cssDistFold))
-
-gulp.task 'autoprefixer', ->
-    gulp.src(paths.cssMainDist)
         .pipe(autoprefixer({
             browsers: ['last 2 versions'],
-            cascade: false
+            cascade: true
         }))
+        .pipe(size())
         .pipe(gulp.dest(paths.cssDistFold))
 
 gulp.task "csslint", ->
     gulp.src(paths.cssMainDist)
         .pipe(plumber())
-        .pipe(cache("csslint"))
         .pipe(csslint("csslintrc.json"))
 
 ##############################################################################
@@ -165,7 +160,6 @@ gulp.task "default", [
     "htmlhint"
     "scsslint",
     "sass",
-    "autoprefixer",
     "csslint",
     "scripts",
     "imagemin",
