@@ -1,3 +1,5 @@
 section.movie-list(ng-controller="MovieController as movie")
+    div.spinner
+        img(src="svg/spinner.svg", alt="Loading")
     div.movie-shot(ng-repeat="movie in movie.movies.results")
         include ../components/movie

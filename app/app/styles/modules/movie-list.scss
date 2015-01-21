@@ -6,13 +6,31 @@
     max-width: 1200px;
     width: 100%;
 
+    .spinner {
+        align-content: center;
+        display: flex;
+        flex-grow: 1;
+        justify-content: center;
+        width: 100%;
+
+        img {
+            @extend %loading-spinner;
+            margin: 0 auto;
+            max-height: 2rem;
+            max-width: 2rem;
+            transform-origin: 32 32;
+        }
+    }
+
     .movie-shot {
+        display: none;
         flex-grow: 1;
         margin: .5rem;
         max-width: 400px;
         min-width: 350px;
 
         &:hover {
+
             img {
                 opacity: 1;
                 transition: opacity .3s ease-in;
