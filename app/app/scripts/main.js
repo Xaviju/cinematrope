@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    var app = angular.module('cinephaghia', []);
+    var app = angular.module('cinematrope', []);
 
     app.service('movieApi', ['$http', function ($http) {
 

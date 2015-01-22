@@ -1,9 +1,9 @@
 section.nav(ng-controller="GenreController as GenreCtrl")
     form(name="MovieSelector", ng-controller="SelectMovieController as SelectMovieCtrl", ng-submit="submit()")
-        select.genres(ng-model="genre")
+        select.genres(ng-model="genre", ng-change="submit()")
             option(value="") Genres
             option(ng-repeat="genre in GenreCtrl.genres.genres", value="{{ genre.id }}") {{ genre.name }}
-        select.year(ng-model="year")
+        select.year(ng-model="year", ng-change="submit()")
             option(value="", selected="selected") Year
             option(value="2020") Recent
             option(value="2010") 2010
@@ -16,7 +16,7 @@ section.nav(ng-controller="GenreController as GenreCtrl")
             option(value="1940") 1940
             option(value="1930") 1930
             option(value="1920") 1920
-        select.vote(ng-model="vote")
+        select.vote(ng-model="vote", ng-change="submit()")
             option(value="") Vote
             option(value="10") 10
             option(value="9") 9
@@ -28,4 +28,3 @@ section.nav(ng-controller="GenreController as GenreCtrl")
             option(value="3") 3
             option(value="2") 2
             option(value="1") 1
-        input(type="submit", id="submit", value="Discover!")
