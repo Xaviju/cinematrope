@@ -14,12 +14,12 @@
 
     select,
     input {
-        flex-flow: 1;
+        flex-grow: 1;
         margin: .5rem;
     }
 
     .genres {
-        flex-grow: 2;
+        flex-grow: 3;
     }
 
     input {

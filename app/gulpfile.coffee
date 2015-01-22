@@ -43,7 +43,11 @@ paths.cssDistFold = "dist/styles/"
 paths.cssMainDist = "dist/styles/main.css"
 #################
 paths.scripts = [
-    "app/scripts/main.js"
+    "app/scripts/main.js",
+    "app/scripts/modules/apiservice.js",
+    "app/scripts/modules/nav.js",
+    "app/scripts/modules/genres.js",
+    "app/scripts/modules/movielist.js"
 ]
 #################
 paths.imageMain = "app/images/*"
